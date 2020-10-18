@@ -1,9 +1,12 @@
+import os
+from dotenv import load_dotenv
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-username = 'librankoech@gmail.com'
-password = 'Murgor@1984'
+load_dotenv()
+username = os.getenv('LOGIN')
+password = os.getenv('PASSWORD')
 
 def send_mail(text='Email Body', subject='Hello World', from_email='Libran Koech <librankoech@gmail.com>', to_emails=None, html=None):
         assert isinstance(to_emails, list)
