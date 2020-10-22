@@ -1,11 +1,15 @@
+import os
+from dotenv import load_dotenv
+
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 from templates import Template
 # environment variables
-username = 'librankoech@gmail.com'
-password = 'Murgor@1984'
+load_dotenv()
+username = os.getenv('LOGIN')
+password = os.getenv('PASSWORD')
 
 class Emailer():
         subject = ""
@@ -13,7 +17,7 @@ class Emailer():
         to_emails = []
         has_html = False
         test_send = False
-        from_email  = 'librankoech@gmail.com <hungrypy@gmail.com>'
+        from_email  = username
         template_html = None
         template_name = None
 
