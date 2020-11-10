@@ -12,7 +12,7 @@ def hello_world():
 def abc_view():
     return "Hello, word. This is flask/abc"
 
-@app.route("/box-oofice-mojo-scraper", methods=['GET'])
+@app.route("/box-ofice-mojo-scraper", methods=['POST'])
 def box_office_scrapper():
     scrape_runner()
     return "Done"

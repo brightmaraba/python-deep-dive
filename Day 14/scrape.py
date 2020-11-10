@@ -10,9 +10,10 @@ import pandas as pd
 now  =  datetime.datetime.now()
 year = now.year
 
-BASE_DIR = os.path.dirname(__file__)
-DATA_DIR = os.path.join(BASE_DIR, 'data')
-os.makedirs(DATA_DIR, exist_ok=True)
+def make_dir():
+    BASE_DIR = os.path.dirname(__file__)
+    DATA_DIR = os.path.join(BASE_DIR, 'data')
+    os.makedirs(DATA_DIR, exist_ok=True)
 
 def url_to_txt(url, filename="world.html", save=False):
     r = requests.get(url)
@@ -54,6 +55,7 @@ def parse_and_extract(url, name='2020'):
             row_data.append(col.text)
         table_data.append(row_data)
     df = pd.DataFrame(table_data, columns=header_names)
+    make_dir()
     filepath = os.path.join('data', f'{name}.csv')
     df.to_csv(filepath, index=False)
 
