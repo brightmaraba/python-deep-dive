@@ -15,4 +15,4 @@ def abc_view():
 @app.route("/box-ofice-mojo-scraper", methods=['POST'])
 def box_office_scrapper():
     scrape_runner()
-    return "Done"
+    return {"Message": "Done"}
