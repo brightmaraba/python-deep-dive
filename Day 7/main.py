@@ -28,7 +28,7 @@ def get_names():
 def print_user_list():
     users = get_names()
     for user in users:
-        format_msg(user, "www.facebook.com")
+        format_msg(user, "www.libranconsult.com")
 
 if __name__ == "__main__":
     print_user_list()
