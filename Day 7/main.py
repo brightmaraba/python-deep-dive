@@ -2,7 +2,7 @@ msg_template = """Hello {name},
 Thank you for joining {website}. We are very happy to have you with us.
 """
 
-def format_msg(my_name="Justin", my_website="cfe.sh"):
+def format_msg(my_name="Brian", my_website="www.libranconsult.com"):
     my_message = msg_template.format(name=my_name, website=my_website)
     print(my_message, "\n")
     return my_message
